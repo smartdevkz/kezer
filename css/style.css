@@ -506,7 +506,7 @@ figure {
 }
 
 .gtco-cover {
-    height: 900px;
+    height: 600px;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -2190,4 +2190,8 @@ form label {
 
 #contacts li a {
     font-size: 14px;
+}
+
+.border {
+    border: 1px solid red;
 }
