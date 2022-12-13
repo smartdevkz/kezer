@@ -12,7 +12,8 @@
     <title>KEZER &mdash; - доставка посылок по Казахстану</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Website Template by GetTemplates.co" />
-    <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="keywords"
+        content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
     <meta name="author" content="GetTemplates.co" />
 
     <!-- Facebook and Twitter integration -->
@@ -70,15 +71,16 @@
         <nav class="gtco-nav" role="navigation">
             <div class="gtco-container">
 
-                <div class="row">
+                <div class="row" class="border">
                     <div class="col-sm-4 col-xs-12">
                         <div id="gtco-logo">
                             <img src="images/logo.png" alt="">
                             <a href="index.html">kezer <em>.</em> </a>
                         </div>
                     </div>
-                    <div class="col-xs-8 text-right menu-1">
-                        <div>
+                    <div class="col-xs-8 text-right">
+
+                        <div class="menu-1">
                             <ul id="contacts">
                                 <li><a href="#"><i class="icon-phone"></i> +7 707 862 9830</a></li>
                                 <li><a href="#"><i class="icon-mail2"></i> info@kezer.kz</a></li>
@@ -86,33 +88,35 @@
                                     <a style="padding:0 ;" href="#"><i class="icon-facebook"></i></a>
                                     <a style="padding:0 ;" href="#"><i class="icon-instagram"></i></a>
                                 </li>
-
+                            </ul>
+                            <ul>
+                                <li class="has-dropdown">
+                                    <a href="#">Услуги</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Europe</a></li>
+                                        <li><a href="#">Asia</a></li>
+                                        <li><a href="#">America</a></li>
+                                        <li><a href="#">Canada</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="pricing.html">О нас</a></li>
+                                <li><a href="pricing.html">Цены</a></li>
+                                <li><a href="contact.html">Контакты</a></li>
+                                <li>
+                                    <input type="button" class="btn btn-primary"
+                                        style="margin: 0; padding: 4px; font-size: 14px;" value="Пригласить курьера" />
+                                </li>
                             </ul>
                         </div>
-                        <ul>
-                            <li class="has-dropdown">
-                                <a href="#">Услуги</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Europe</a></li>
-                                    <li><a href="#">Asia</a></li>
-                                    <li><a href="#">America</a></li>
-                                    <li><a href="#">Canada</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="pricing.html">О нас</a></li>
-                            <li><a href="pricing.html">Цены</a></li>
-                            <li><a href="contact.html">Контакты</a></li>
-                            <li>
-                                <input type="button" class="btn btn-primary" style="margin: 0; padding: 4px; font-size: 14px;" value="Пригласить курьера" />
-                            </li>
-                        </ul>
+
                     </div>
                 </div>
 
             </div>
         </nav>
 
-        <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(images/img_bg_2.jpg)">
+        <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner"
+            style="background-image: url(images/img_bg_2.jpg)">
             <div class="overlay"></div>
             <div class="gtco-container">
                 <div class="row row-mt-15em">
@@ -122,29 +126,35 @@
                                 <div class="tab-content">
                                     <div class="tab-content-inner active" data-content="signup">
                                         <h3>Попробуйте наш калькулятор</h3>
-                                        <table class="table">
-                                            <tr>
-                                                <td>
-                                                    <select name="#" id="activities" class="form-control">
-                                                    <option value="">Астана</option>
-                                                    <option value="">Алматы</option>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Откуда</label>
+                                                <select name="#" id="fromCity" class="form-control"
+                                                    onchange="onFromCityChanged()">
+                                                    <option value="1">Астана</option>
+                                                    <option value="2" selected>Алматы</option>
                                                 </select>
-                                                </td>
-                                                <td>
-                                                    <select name="#" id="activities" class="form-control">
-                                                    <option value="">Алматы</option>
-                                                    <option value="">Астана</option>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="control-label">Куда</label>
+                                                <select name="#" id="toCity" class="form-control"
+                                                    onchange="onToCityChanged()">
+                                                    <option value="1" selected>Астана</option>
+                                                    <option value="2">Алматы</option>
                                                 </select>
-                                                </td>
-                                                <td style="width: 16%;">
-                                                    <input type="text" id="fullname" placeholder="Вес" class="form-control">
-                                                </td>
-                                                <td>
-                                                    <input type="submit" class="btn btn-primary btn-block" value="Submit">
-                                                </td>
-                                            </tr>
-                                        </table>
-
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label class="control-label">Вес, кг</label>
+                                                <select id="weight" class="form-control" onchange="onWeightChanged()">
+                                                    <option value="1" selected>До 3 кг</option>
+                                                    <option value="2">От 3 до 5 кг</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label class="control-label">Цена</label>
+                                                <div id="price" style="font-size:24px;font-weight: bold;">1000</div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -160,7 +170,8 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
                         <h2>Most Popular Destination</h2>
-                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
+                            provident. Odit ab aliquam dolor eius.</p>
                     </div>
                 </div>
                 <div class="row">
@@ -257,7 +268,8 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
                         <h2>Как это работает?</h2>
-                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
+                            provident. Odit ab aliquam dolor eius.</p>
                     </div>
                 </div>
                 <div class="row">
@@ -266,7 +278,8 @@
                             <img src="images/address.png" style="width: 50%;" />
                             <br /><br />
                             <h3>Lorem ipsum dolor sit amet</h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
+                                provident. Odit ab aliquam dolor eius.</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
@@ -274,7 +287,8 @@
                             <img src="images/delivery.webp" style="width: 50%;" />
                             <br /><br />
                             <h3>Consectetur adipisicing elit</h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
+                                provident. Odit ab aliquam dolor eius.</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
@@ -282,7 +296,8 @@
                             <img src="images/give.webp" style="width: 50%;" />
                             <br /><br />
                             <h3>Dignissimos asperiores vitae</h3>
-                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
+                                provident. Odit ab aliquam dolor eius.</p>
                         </div>
                     </div>
 
@@ -292,7 +307,8 @@
         </div>
 
 
-        <div class="gtco-cover gtco-cover-sm" style="background-image: url(images/img_bg_1.jpg);display: none;" data-stellar-background-ratio="0.5">
+        <div class="gtco-cover gtco-cover-sm" style="background-image: url(images/img_bg_1.jpg);display: none;"
+            data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="gtco-container text-center">
                 <div class="display-t">
@@ -309,7 +325,8 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
                         <h2>Наш успех</h2>
-                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+                        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
+                            provident. Odit ab aliquam dolor eius.</p>
                     </div>
                 </div>
 
@@ -317,26 +334,30 @@
 
                     <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
                         <div class="feature-center">
-                            <span class="counter js-counter" data-from="0" data-to="50" data-speed="5000" data-refresh-interval="50">1</span>
+                            <span class="counter js-counter" data-from="0" data-to="50" data-speed="5000"
+                                data-refresh-interval="50">1</span>
                             <span class="counter-label">Направлении</span>
 
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
                         <div class="feature-center">
-                            <span class="counter js-counter" data-from="0" data-to="12202" data-speed="5000" data-refresh-interval="50">1</span>
+                            <span class="counter js-counter" data-from="0" data-to="12202" data-speed="5000"
+                                data-refresh-interval="50">1</span>
                             <span class="counter-label">Посылки</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
                         <div class="feature-center">
-                            <span class="counter js-counter" data-from="0" data-to="170" data-speed="5000" data-refresh-interval="50">1</span>
+                            <span class="counter js-counter" data-from="0" data-to="170" data-speed="5000"
+                                data-refresh-interval="50">1</span>
                             <span class="counter-label">Магазины</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
                         <div class="feature-center">
-                            <span class="counter js-counter" data-from="0" data-to="1200" data-speed="5000" data-refresh-interval="50">1</span>
+                            <span class="counter js-counter" data-from="0" data-to="1200" data-speed="5000"
+                                data-refresh-interval="50">1</span>
                             <span class="counter-label">Довольные клиенты</span>
 
                         </div>
@@ -381,7 +402,9 @@
                     <div class="col-md-4">
                         <div class="gtco-widget">
                             <h3>About Us</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eos molestias quod sint ipsum possimus temporibus officia iste perspiciatis consectetur in fugiat repudiandae cum. Totam cupiditate nostrum ut neque ab?</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eos molestias quod sint
+                                ipsum possimus temporibus officia iste perspiciatis consectetur in fugiat repudiandae
+                                cum. Totam cupiditate nostrum ut neque ab?</p>
                         </div>
                     </div>
 
@@ -428,13 +451,15 @@
                     <div class="col-md-12">
                         <p class="pull-left">
                             <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
-                            <small class="block">Designed by <a href="http://GetTemplates.co/" target="_blank">GetTemplates.co</a> Demo Images: <a href="http://unsplash.com/" target="_blank">Unsplash</a></small>
+                            <small class="block">Designed by <a href="http://GetTemplates.co/"
+                                    target="_blank">GetTemplates.co</a> Demo Images: <a href="http://unsplash.com/"
+                                    target="_blank">Unsplash</a></small>
                         </p>
                         <p class="pull-right">
-                            <ul class="gtco-social-icons pull-right">
-                                <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                <li><a href="#"><i class="icon-instagram"></i></a></li>
-                            </ul>
+                        <ul class="gtco-social-icons pull-right">
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a href="#"><i class="icon-instagram"></i></a></li>
+                        </ul>
                         </p>
                     </div>
                 </div>
@@ -475,6 +500,40 @@
 
     <!-- Main -->
     <script src="js/main.js"></script>
+
+    <script>
+        function onFromCityChanged() {
+            var selectedIndex = document.getElementById('fromCity').selectedIndex;
+            var idx2 = getSecondIndex(selectedIndex);
+            setSelectedCityIdx('toCity', idx2);
+            setPrice();
+        }
+
+        function onToCityChanged() {
+            var selectedIndex = document.getElementById('toCity').selectedIndex;
+            var idx2 = getSecondIndex(selectedIndex);
+            setSelectedCityIdx('fromCity', idx2);
+            setPrice();
+        }
+
+        function onWeightChanged() {
+            setPrice();
+        }
+
+        function getSecondIndex(idx) {
+            return idx == 0 ? 1 : 0;
+        }
+
+        function setSelectedCityIdx(id, idx) {
+            document.getElementById(id).selectedIndex = idx;
+        }
+
+        function setPrice() {
+            var weight = document.getElementById('weight').value;
+            var price = weight == 1 ? 1000 : 2000;
+            document.getElementById('price').innerText = price + " тг";
+        }
+    </script>
 
 </body>
 
